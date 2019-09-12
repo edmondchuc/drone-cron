@@ -36,7 +36,7 @@ steps:
     - cd ternplotdata-ontology/schema
     - mkdir -p /var/www/def/datatype
     - cp datatype.ttl /var/www/def/datatype
-    - git clone https://github.com/RDFLib/pyLODE.git
+    # - git clone https://github.com/RDFLib/pyLODE.git
     - cd pyLODE
     - apt install python3-pip -y
     - pip3 install -r requirements.txt
