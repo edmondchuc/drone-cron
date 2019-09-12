@@ -12,8 +12,8 @@ steps:
   commands:
     - ls
     - pwd
-    - git clone https://github.com/edmondchuc/test.git
-    - cd test
+    - git clone https://@bitbucket.org/terndatateam/ternplotdata-ontology.git
+    - cd ternplotdata-ontology/schema
     - mkdir -p /var/www/def/plot
     - cp plot.ttl /var/www/def/plot
     - git clone https://github.com/RDFLib/pyLODE.git
