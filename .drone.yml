@@ -32,7 +32,7 @@ steps:
   commands:
     - ls
     - pwd
-    - git clone https://@bitbucket.org/terndatateam/ternplotdata-ontology.git
+    # - git clone https://@bitbucket.org/terndatateam/ternplotdata-ontology.git
     - cd ternplotdata-ontology/schema
     - mkdir -p /var/www/def/datatype
     - cp datatype.ttl /var/www/def/datatype
