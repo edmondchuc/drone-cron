@@ -42,7 +42,7 @@ steps:
     - export LC_ALL=C.UTF-8
     - export LANG=C.UTF-8
     - ls
-    - python3s pylode-inject/pylode_inject.py pylode_inject.yml index.html index.html
+    - python3 pylode-inject/pylode_inject.py pylode_inject.yml index.html index.html
 
     # Copy HTML and CSS to web directory
     - ls
