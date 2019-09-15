@@ -32,6 +32,7 @@ steps:
     - pwd
     - ./pylode -i ../../../../plot.ttl --css true
     - cd ../output_files 
+    - mv doc.html index.html
 
     # Clone pyLODE Inject to inject logos and figures
     - git clone https://github.com/edmondchuc/pylode-inject.git
