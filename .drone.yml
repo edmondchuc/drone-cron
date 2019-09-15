@@ -27,7 +27,7 @@ steps:
     - mkdir -p pyLODE/src/pylode/output_files
     - cp pylode_inject.yml pyLODE/src/pylode/output_files
     - cd pyLODE
-    - apts install python3-pip -y
+    - apt install python3-pip -y
     - pip3 install -r requirements.txt
     - cd src/pylode/bin
     - pwd
@@ -42,7 +42,7 @@ steps:
     - export LC_ALL=C.UTF-8
     - export LANG=C.UTF-8
     - ls
-    - python3 pylode-inject/pylode_inject.py pylode_inject.yml index.html index.html
+    - python3s pylode-inject/pylode_inject.py pylode_inject.yml index.html index.html
 
     # Copy HTML and CSS to web directory
     - ls
