@@ -43,11 +43,9 @@ steps:
     - ls
     - python3 pylode-inject/pylode_inject.py pylode_inject.yml index.html index.html
 
+    # Copy HTML and CSS to web directory
     - ls
-    # - cd ..
-    # - cp output_files/* /var/www/def/plot
-    # - cd /var/www/def/plot
-    # - mv doc.html index.html
+    - cp index.html style.css /var/www/def/plot
 
 - name: Datatype Ontology
   commands:
