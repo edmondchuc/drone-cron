@@ -20,7 +20,7 @@ steps:
     # Copy RDF to web directory.
     - cd ternplotdata-ontology/schema
     - mkdir -p /var/www/def/plot
-    - cp plot.ttl /var/www/def/plot
+    - cp plot.ttl /var/www/def/plot/index.ttl
 
     # Clone and run pyLODE
     - git clone https://github.com/RDFLib/pyLODE.git
@@ -58,7 +58,7 @@ steps:
     # - git clone https://@bitbucket.org/terndatateam/ternplotdata-ontology.git
     - cd ternplotdata-ontology/schema
     - mkdir -p /var/www/def/datatype
-    - cp datatype.ttl /var/www/def/datatype
+    - cp datatype.ttl /var/www/def/datatype/index.ttl
 
     # Clone and run pyLODE - pyLODE already cloned by Plot Ontology step
     # - git clone https://github.com/RDFLib/pyLODE.git
