@@ -36,7 +36,7 @@ steps:
     # Clone pyLODE Inject to inject logos and figures
     - git clone https://github.com/edmondchuc/pylode-inject.git
     - pip3 install -r pylode-inject/requirements.txt
-    - python3 pylode-inject/pylode_inject pylode_inject.yml index.html index.html
+    - python3 pylode-inject/pylode_inject.py pylode_inject.yml index.html index.html
 
     - ls
     # - cd ..
