@@ -21,7 +21,7 @@ steps:
     - mkdir -p /var/www/def/plot
     - cp plot.ttl /var/www/def/plot
 
-    # Clone pyLODE
+    # Clone and run pyLODE
     - git clone https://github.com/RDFLib/pyLODE.git
     - mkdir -p pyLODE/src/pylode/output_files
     - cp pylode_inject.yml pyLODE/src/pylode/output_files
@@ -51,18 +51,21 @@ steps:
   commands:
     - ls
     - pwd
+
+    # Datatype Ontology repository already cloned by Plot Ontology step
     # - git clone https://@bitbucket.org/terndatateam/ternplotdata-ontology.git
     - cd ternplotdata-ontology/schema
     - mkdir -p /var/www/def/datatype
     - cp datatype.ttl /var/www/def/datatype
+
+    # Clone and run pyLODE - pyLODE already cloned by Plot Ontology step
     # - git clone https://github.com/RDFLib/pyLODE.git
     - cd pyLODE
     - apt install python3-pip -y
     - pip3 install -r requirements.txt
     - cd src/pylode/bin
-    - pwd
     - ./pylode -i ../../../../datatype.ttl --css true
-    - cd ..
-    - cp output_files/* /var/www/def/datatype
-    - cd /var/www/def/datatype
     - mv doc.html index.html
+
+    # Copy HTML and CSS to web directory
+    - cp index.html style.css /var/www/def/datatype
