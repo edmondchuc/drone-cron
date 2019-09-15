@@ -1,7 +1,7 @@
 ---
 kind: pipeline
 type: exec
-name: default
+name: Build and Deploy AGLDWG Ontologies
 
 platform:
   os: linux
@@ -12,21 +12,37 @@ steps:
   commands:
     - ls
     - pwd
+    
+    # Clone Plot Ontology repository
     - git clone https://@bitbucket.org/terndatateam/ternplotdata-ontology.git
+
+    # Copy RDF to web directory.
     - cd ternplotdata-ontology/schema
     - mkdir -p /var/www/def/plot
     - cp plot.ttl /var/www/def/plot
+
+    # Clone pyLODE
     - git clone https://github.com/RDFLib/pyLODE.git
+    - mkdir -p pyLODE/src/pylode/output_files
+    - cp pylode_inject.yml pyLODE/src/pylode/output_files
     - cd pyLODE
     - apt install python3-pip -y
     - pip3 install -r requirements.txt
     - cd src/pylode/bin
     - pwd
     - ./pylode -i ../../../../plot.ttl --css true
-    - cd ..
-    - cp output_files/* /var/www/def/plot
-    - cd /var/www/def/plot
-    - mv doc.html index.html
+    - cd ../output_files 
+
+    # Clone pyLODE Inject to inject logos and figures
+    - git clone https://github.com/edmondchuc/pylode-inject.git
+    - pip3 install -r pylode-inject/requirements.txt
+    - python3 pylode-inject/pylode_inject pylode_inject.yml index.html index.html
+
+    - ls
+    # - cd ..
+    # - cp output_files/* /var/www/def/plot
+    # - cd /var/www/def/plot
+    # - mv doc.html index.html
 
 - name: Datatype Ontology
   commands:
