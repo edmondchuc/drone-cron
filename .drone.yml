@@ -9,6 +9,7 @@ platform:
 
 steps:
 - name: Plot Ontology
+  failure: ignore
   commands:
     - ls
     - pwd
@@ -17,7 +18,7 @@ steps:
     - git clone https://@bitbucket.org/terndatateam/ternplotdata-ontology.git
 
     # Copy RDF to web directory.
-    - cd ternplotdata-ontology/schema
+    - cd ternplotdata-ontology/schemas
     - mkdir -p /var/www/def/plot
     - cp plot.ttl /var/www/def/plot
 
@@ -48,6 +49,7 @@ steps:
     - cp index.html style.css /var/www/def/plot
 
 - name: Datatype Ontology
+  failure: ignore
   commands:
     - ls
     - pwd
