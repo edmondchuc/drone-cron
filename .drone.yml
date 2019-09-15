@@ -21,6 +21,7 @@ steps:
     - cd ternplotdata-ontology/schema
     - mkdir -p /var/www/def/plot
     - cp plot.ttl /var/www/def/plot/index.ttl
+    - cp plot.ttl /var/www/def/plot/plot.ttl
 
     # Clone and run pyLODE
     - git clone https://github.com/RDFLib/pyLODE.git
@@ -59,6 +60,7 @@ steps:
     - cd ternplotdata-ontology/schema
     - mkdir -p /var/www/def/datatype
     - cp datatype.ttl /var/www/def/datatype/index.ttl
+    - cp datatype.ttl /var/www/def/datatype/datatype.ttl
 
     # Clone and run pyLODE - pyLODE already cloned by Plot Ontology step
     # - git clone https://github.com/RDFLib/pyLODE.git
