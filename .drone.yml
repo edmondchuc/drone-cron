@@ -65,6 +65,7 @@ steps:
     - pip3 install -r requirements.txt
     - cd src/pylode/bin
     - ./pylode -i ../../../../datatype.ttl --css true
+    - cd ../output_files 
     - mv doc.html index.html
 
     # Copy HTML and CSS to web directory
