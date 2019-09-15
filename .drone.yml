@@ -39,6 +39,7 @@ steps:
     # Click requires UTF-8 encoding on host system
     - export LC_ALL=C.UTF-8
     - export LANG=C.UTF-8
+    - ls
     - python3 pylode-inject/pylode_inject.py pylode_inject.yml index.html index.html
 
     - ls
