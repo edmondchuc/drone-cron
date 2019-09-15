@@ -18,7 +18,7 @@ steps:
     - git clone https://@bitbucket.org/terndatateam/ternplotdata-ontology.git
 
     # Copy RDF to web directory.
-    - cd ternplotdata-ontology/schemas
+    - cd ternplotdata-ontology/schema
     - mkdir -p /var/www/def/plot
     - cp plot.ttl /var/www/def/plot
 
@@ -27,7 +27,7 @@ steps:
     - mkdir -p pyLODE/src/pylode/output_files
     - cp pylode_inject.yml pyLODE/src/pylode/output_files
     - cd pyLODE
-    - apt install python3-pip -y
+    - apts install python3-pip -y
     - pip3 install -r requirements.txt
     - cd src/pylode/bin
     - pwd
